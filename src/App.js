@@ -1,11 +1,12 @@
 import React from 'react';
-import Header from './Header'
+import Header from './Header';
+import Home from './Home'
 import './App.css';
 function App() {
   return (
-    <div style={{height:"1500px"}}>
+    <div>
        <Header/>
-       <h1>HELLO</h1>
+       <Home/>
     </div>
   );
 }
