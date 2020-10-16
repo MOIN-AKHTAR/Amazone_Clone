@@ -10,7 +10,7 @@ export default function Product({title,price,image,rating,alt}) {
                  <strong>{price}</strong>
              </p>
              <div className="product__rating">
-                {Array(rating).fill().map((_,index)=><p key={index}>⭐</p>)}
+                {Array(rating).fill().map((_,index)=><span key={index} role="img" aria-label="emoji">⭐</span>)}
              </div>
              </div>
              <img src={image} alt={alt}/> 
