@@ -1,12 +1,12 @@
 import React from 'react';
+import Header from './Header'
 import './App.css';
-
 function App() {
   return (
-    <div className="App">
-      <h1>HELLO CHAMP!!!</h1>
+    <div style={{height:"1500px"}}>
+       <Header/>
+       <h1>HELLO</h1>
     </div>
   );
 }
-
 export default App;
