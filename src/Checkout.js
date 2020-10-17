@@ -1,7 +1,12 @@
 import React from 'react';
 import Subtotal from './Subtotal';
+import {useContextValue} from './StateProvider';
+import CheckoutProduct from './CheckoutProduct';
 
 export default function Checkout() {
+
+    const [{basket}]=useContextValue();
+
     return (
         <div className="checkout_container">
            <div className="checkout_left">
@@ -11,6 +16,18 @@ export default function Checkout() {
             <div>
                 <h2 className="checkout_title">Your Shopping Basket</h2>
             </div>
+             {
+                basket.map((item,index)=>(
+                   <CheckoutProduct
+                   id={item.id}
+                   image={item.image}
+                   title={item.title}
+                   price={item.price}
+                   rating={item.rating}
+                   key={index}
+                   />
+                ))
+             }
            </div>
            <div className="checkout_right">
               <Subtotal />

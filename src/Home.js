@@ -12,6 +12,7 @@ export default function Home() {
                 
             <div className="home_row">
                 <Product
+                id={1}
                 title="The lean startup"
                 price={29.99}
                 rating={5}
@@ -19,6 +20,7 @@ export default function Home() {
                 alt="Product"
                  />
                 <Product 
+                id={2}
                 title="Kenwood kMixStand Mixer for Baking, Stylish kitchen mixture with  K-beater ,Dough Hook and Whisk, 5 litre Glass Bowl"
                 price={239}
                 rating={4}
@@ -28,6 +30,7 @@ export default function Home() {
             </div>
             <div className="home_row">
             <Product 
+                id={3}
                 title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
                 price={199.99}
                 rating={3}
@@ -35,6 +38,7 @@ export default function Home() {
                 alt="LED Gaming Monitor"
                 />
                 <Product 
+                id={4}
                 title="Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"
                 price={98.99}
                 rating={5}
@@ -42,6 +46,7 @@ export default function Home() {
                 alt="Amazon Echo (3rd generation)"
                 />
                 <Product 
+                id={5}
                 title="New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Silver (4th Generation)"
                 price={598.99}
                 rating={4}
@@ -51,6 +56,7 @@ export default function Home() {
             </div>
             <div className="home_row">
                <Product 
+               id={6}
                title="Sceptre 24-Inch Curved 144Hz Gaming LED Monitor Edge-Less AMD FreeSync DisplayPort HDMI, Machine Black (C248B-144RN)"
                price={154}
                rating={5}

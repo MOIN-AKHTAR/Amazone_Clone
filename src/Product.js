@@ -1,6 +1,18 @@
-import React from 'react'
+import React from 'react';
+import {useContextValue} from './StateProvider';
+import {ADD_TO_BASKET} from './Type'
 
-export default function Product({title,price,image,rating,alt}) {
+export default function Product({id,title,price,image,rating,alt}) {
+
+
+   const [,dispatch]=useContextValue();
+    const addToBasket=()=>{
+          dispatch({
+              type:ADD_TO_BASKET,
+              item:{id,title,price,image,rating}
+          });
+    }
+
     return (
         <div className="product">
          <div className="product__info">
@@ -14,7 +26,7 @@ export default function Product({title,price,image,rating,alt}) {
              </div>
              </div>
              <img src={image} alt={alt}/> 
-             <button>Add To Basket</button>
+             <button onClick={addToBasket}>Add To Basket</button>
         </div>
     )
 }
