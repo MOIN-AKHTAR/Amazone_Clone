@@ -27,22 +27,24 @@ export default function Header() {
               />
            </div>
            <div className="header_nav">
-               <Link to={!user&&"/login"}>
+               <Link to={!user&&"/login"} className="link">
                <div className="header__option" onClick={handleAuthentication}>
-                   <span className="header__optionLineOne">Hello Guest</span>
+                   <span className="header__optionLineOne">Hello {!user?"Guest":user.email}</span>
                    <span className="header__optionLineTwo">{user?"Log Out":"Sign In"}</span>
                </div>
                </Link>
+               <Link to="/orders" className="link">
                <div className="header__option">
                    <span className="header__optionLineOne">Returns</span>
                    <span className="header__optionLineTwo">& Orders</span>
                </div>
+               </Link>
                <div className="header__option">
                    <span className="header__optionLineOne">Your</span>
                    <span className="header__optionLineTwo">Prime</span>
                </div>
            </div>
-          <Link to="/checkout">
+          <Link to="/checkout" className="link">
             <div className="header_shoppingBasket">
                <ShoppingBasket/>
                <span className="basket_qty">{basket?basket.length:null}</span>

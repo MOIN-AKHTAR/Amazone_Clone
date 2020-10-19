@@ -2,7 +2,7 @@ import React from 'react';
 import {REMOVE_FROM_BASKET} from './Type';
 import {useContextValue} from './StateProvider'
 
-export default function CheckoutProduct({id,image,title,rating,price}) {
+export default function CheckoutProduct({id,image,title,rating,price,hiddenButton}) {
          const [,dispatch]=useContextValue();
 
          const removeFromBasket=()=>{
@@ -26,9 +26,9 @@ export default function CheckoutProduct({id,image,title,rating,price}) {
                     <span>$</span>
                     <strong>{price}</strong>
                 </p>
-                <button
+                {!hiddenButton&&<button
                 onClick={removeFromBasket}
-                >Remove From Cart</button>
+                >Remove From Cart</button>}
             </div>
         </div>
     )

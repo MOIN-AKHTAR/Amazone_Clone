@@ -1,6 +1,8 @@
 import React from 'react';
 import {useContextValue} from './StateProvider';
 import {ADD_TO_BASKET} from './Type'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Product({id,title,price,image,rating,alt}) {
 
@@ -11,9 +13,11 @@ export default function Product({id,title,price,image,rating,alt}) {
               type:ADD_TO_BASKET,
               item:{id,title,price,image,rating}
           });
+          toast.success("Added To Basket",{position:toast.POSITION.BOTTOM_RIGHT,autoClose:2000})
     }
 
     return (
+        <React.Fragment>
         <div className="product">
          <div className="product__info">
              <p>{title}</p>
@@ -28,6 +32,8 @@ export default function Product({id,title,price,image,rating,alt}) {
              <img src={image} alt={alt}/> 
              <button onClick={addToBasket}>Add To Basket</button>
         </div>
+        <ToastContainer/>
+        </React.Fragment>
     )
 }
 

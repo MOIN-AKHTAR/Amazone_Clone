@@ -66,3 +66,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+firebase emulators:start   Command for running Server-   We used this command when we created our cloud functions-
+firebase deploy   It deploys both front end and your backend here backend reffere to (Cloud Functions)-
+firebase deploy --only functions  This used for deploying these cloud functions only which is backend and not our front end-
+firebase deploy --only hosting This used for deploying only front end but not backend (Bakcned reffer to cloud functions)-

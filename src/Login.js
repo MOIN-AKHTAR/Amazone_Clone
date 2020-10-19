@@ -1,14 +1,11 @@
 import React,{useState} from 'react'
 import { Link,useHistory } from 'react-router-dom';
 import {auth} from './fireBase';
-import {useContextValue} from './StateProvider';
-import {SET_USER} from './Type';
 
 export default function Login() {
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
     const history=useHistory();
-    const [,dispatch]=useContextValue()
 
     const signIn=(e)=>{
         e.preventDefault();

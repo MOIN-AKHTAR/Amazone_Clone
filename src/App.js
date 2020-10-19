@@ -8,10 +8,16 @@ import {BrowserRouter,Switch,Route} from 'react-router-dom';
 import {auth} from './fireBase';
 import {useContextValue} from './StateProvider';
 import {SET_USER} from './Type';
+import Payment from './Payment';
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js'
+import Orders from './Orders';
+
+const stripePromise = loadStripe(STRIPT_PUBLIC_KEY);
 
 function App() {
 
-  const [,dispatch]=useContextValue();
+  const [{user},dispatch]=useContextValue();
 
   useEffect(() => {
     // Real Time User State Is Being Checked----
@@ -29,7 +35,7 @@ function App() {
       }
     })
     
-  }, [])
+  }, [user])
 
   return (
     <BrowserRouter>
@@ -38,6 +44,16 @@ function App() {
          <Route path="/checkout">
            <Header/>
            <Checkout/>
+         </Route>
+         <Route path="/payment">
+           <Header/>
+           <Elements stripe={stripePromise}>
+            <Payment/>
+           </Elements>
+         </Route>
+         <Route path="/orders">
+           <Header/>
+           <Orders/>
          </Route>
          <Route path="/">
             <Header/>
@@ -48,3 +64,8 @@ function App() {
   );
 }
 export default App;
+
+
+
+
+

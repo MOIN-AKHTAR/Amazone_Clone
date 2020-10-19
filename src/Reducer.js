@@ -1,4 +1,4 @@
-import {ADD_TO_BASKET,REMOVE_FROM_BASKET,SET_USER} from './Type';
+import {ADD_TO_BASKET,EMPTY_BASKET,REMOVE_FROM_BASKET,SET_USER} from './Type';
 import {updateObject} from './Utils';
 
 export const initialState={
@@ -27,7 +27,8 @@ export const reducer=(State=initialState,Action)=>{
     switch (Action.type) {
         case ADD_TO_BASKET:return addToBasket(State,{basket:[...State.basket,Action.item]});
         case REMOVE_FROM_BASKET:return removeFromBasket(State,Action.id);
-        case SET_USER:return setUser(State,{user:Action.user})
+        case SET_USER:return setUser(State,{user:Action.user});
+        case EMPTY_BASKET: return updateObject(State,{basket:[]});
         default:return State;
     }
 }
